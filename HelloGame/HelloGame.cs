@@ -14,14 +14,16 @@ namespace HelloGame
         private Vector2 ballVelocity;
         private Texture2D ballTexture;
 
+       
+
         public HelloGame()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
 
-            Window.Title = "Look at that ball go!";
-
+            Window.Title = "Hello Game - Look at that ball go!";
+            
 
         }
 
@@ -53,6 +55,7 @@ namespace HelloGame
             // TODO: use this.Content to load your game content here
 
             ballTexture = Content.Load<Texture2D>("ball");
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -82,12 +85,15 @@ namespace HelloGame
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.WhiteSmoke);
 
             // TODO: Add your drawing code here
 
+
+
             _spriteBatch.Begin();
             _spriteBatch.Draw(ballTexture, ballPosition, Color.White);
+
             _spriteBatch.End();
 
             base.Draw(gameTime);
